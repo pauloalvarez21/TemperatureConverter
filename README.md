@@ -1,7 +1,3 @@
-¡Claro! Aquí tienes el archivo **`README.md`** escrito con el formato que solicitaste, usando `#` para los títulos y `##` para los subtítulos:
-
----
-
 # Temperature Converter App 🌡️
 
 ¡Bienvenido a la aplicación **Temperature Converter**! Esta aplicación te permite convertir temperaturas entre las escalas **Celsius**, **Fahrenheit**, **Kelvin** y **Rankine** de manera rápida y sencilla. Desarrollada con **React Native** y **TypeScript**, es compatible con iOS y Android.
@@ -19,14 +15,6 @@
 - **Interfaz intuitiva**: Diseño limpio y fácil de usar.
 - **Precisión**: Resultados redondeados a 2 decimales.
 - **Desarrollada con TypeScript**: Código robusto y tipado.
-
----
-
-## Capturas de Pantalla 📸
-
-| Inicio | Conversión |
-|--------|------------|
-| ![Pantalla de inicio](screenshots/home.png) | ![Resultados de conversión](screenshots/convert.png) |
 
 ---
 
