@@ -1,29 +1,32 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, TextInput, Button, StyleSheet} from 'react-native';
 import useTemperatureConverter from '../state/useTemperatureConverter';
 
-const Temperature = () => {
+const TemperatureConverter = () => {
   const [temperature, setTemperature] = useState('');
   const [scale, setScale] = useState('C');
-  const { converted, convertTemperature } = useTemperatureConverter(temperature, scale);
+  const {converted, convertTemperature} = useTemperatureConverter(
+    temperature,
+    scale,
+  );
 
   return (
     <View style={styles.container}>
       <Text>Ingrese temperatura:</Text>
       <TextInput
         style={styles.input}
-        keyboardType='numeric'
+        keyboardType="numeric"
         value={temperature}
         onChangeText={setTemperature}
       />
       <View style={styles.buttonContainer}>
-        <Button title='Celsius' onPress={() => setScale('C')} />
-        <Button title='Fahrenheit' onPress={() => setScale('F')} />
-        <Button title='Kelvin' onPress={() => setScale('K')} />
-        <Button title='Rankine' onPress={() => setScale('R')} />
-        <Button title='Réaumur' onPress={() => setScale('Re')} />
+        <Button title="Celsius" onPress={() => setScale('C')} />
+        <Button title="Fahrenheit" onPress={() => setScale('F')} />
+        <Button title="Kelvin" onPress={() => setScale('K')} />
+        <Button title="Rankine" onPress={() => setScale('R')} />
+        <Button title="Réaumur" onPress={() => setScale('Re')} />
       </View>
-      <Button title='Convertir' onPress={convertTemperature} />
+      <Button title="Convertir" onPress={convertTemperature} />
       <Text>Resultados:</Text>
       <Text>Celsius: {converted.C}°C</Text>
       <Text>Fahrenheit: {converted.F}°F</Text>
@@ -48,7 +51,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginVertical: 10,
     flexWrap: 'wrap',
-  }
+  },
 });
 
-export default Temperature;
+export default TemperatureConverter;
