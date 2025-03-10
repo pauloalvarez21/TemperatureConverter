@@ -3,11 +3,20 @@ import HomeScreen from '../screens/HomeScreen';
 import TemperatureConverter from '../screens/TemperatureConverter';
 import RomanConverter from '../screens/RomanConverter';
 
-const Stack = createStackNavigator();
+// Define el tipo de las rutas
+export type RootStackParamList = {
+  Home: undefined;
+  TemperatureConverter: undefined;
+  RomanConverter: undefined;
+};
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 export const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="RomanConverter">
+    <Stack.Navigator
+      initialRouteName="Home"
+      screenOptions={{headerShown: false}}>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen
         name="TemperatureConverter"
