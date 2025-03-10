@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     color: '#007AFF',
     fontSize: 16,
     fontWeight: 'bold',
+    fontFamily: 'CHOWFUN_',
   },
 });
 
