@@ -1,31 +1,16 @@
-import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
-import {useNavigation} from '@react-navigation/native'; // Importar useNavigation
+import React from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import useTemperatureConverter from '../state/useTemperatureConverter';
 import Header from '../components/Header';
 
 const TemperatureConverter = () => {
-  const navigation = useNavigation(); // Obtener la navegación
-  const [temperature, setTemperature] = useState('');
-  const [scale, setScale] = useState('C');
-  const {converted, convertTemperature} = useTemperatureConverter(
-    temperature,
-    scale,
-  );
+  const navigation = useNavigation();
+  const { temperature, setTemperature, scale, setScale, converted, convertTemperature } = useTemperatureConverter();
 
   return (
     <View style={styles.container}>
-      <Header
-        title="Conversor de Temperatura"
-        showBack={true}
-        navigation={navigation}
-      />
+      <Header title="Conversor de Temperatura" showBack={true} navigation={navigation} />
       <Text style={styles.label}>Ingrese temperatura:</Text>
       <TextInput
         style={styles.input}
@@ -33,21 +18,23 @@ const TemperatureConverter = () => {
         value={temperature}
         onChangeText={setTemperature}
       />
+
       <View style={styles.buttonContainer}>
-        {['Cel', 'Fah', 'Kel', 'Ran', 'Rea'].map(item => (
+        {['C', 'F', 'K', 'R', 'Re'].map((item) => (
           <TouchableOpacity
             key={item}
             style={[styles.button, scale === item && styles.selectedButton]}
-            onPress={() => setScale(item)}>
+            onPress={() => setScale(item)}
+          >
             <Text style={styles.buttonText}>{item}</Text>
           </TouchableOpacity>
         ))}
       </View>
-      <TouchableOpacity
-        style={styles.convertButton}
-        onPress={convertTemperature}>
+
+      <TouchableOpacity style={styles.convertButton} onPress={convertTemperature}>
         <Text style={styles.buttonText}>Convertir</Text>
       </TouchableOpacity>
+
       <Text style={styles.title}>Resultados:</Text>
       <Text style={styles.result}>Celsius: {converted.C}°C</Text>
       <Text style={styles.result}>Fahrenheit: {converted.F}°F</Text>
@@ -92,7 +79,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     margin: 5,
     shadowColor: '#000',
-    shadowOffset: {width: 0, height: 4},
+    shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
     elevation: 5,
@@ -107,7 +94,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     alignSelf: 'center',
     shadowColor: '#000',
-    shadowOffset: {width: 0, height: 4},
+    shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
     elevation: 5,

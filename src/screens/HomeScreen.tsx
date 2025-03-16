@@ -25,6 +25,18 @@ const HomeScreen = () => {
       >
         <Text style={styles.buttonText}>Go to Roman Converter</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('MayaConverter')}
+      >
+        <Text style={styles.buttonText}>Go to Maya Converter</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('NumberConverter')}
+      >
+        <Text style={styles.buttonText}>Go to Number Converter</Text>
+      </TouchableOpacity>
     </View>
   );
 };

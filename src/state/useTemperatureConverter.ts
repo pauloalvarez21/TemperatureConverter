@@ -1,69 +1,57 @@
 import { useState } from 'react';
 
-const useTemperatureConverter = (temperature: string, scale: string) => {
-  // Estado para almacenar las temperaturas convertidas en diferentes escalas
-  const [converted, setConverted] = useState({ C: '', F: '', K: '', R: '', Re: '' });
+const useTemperatureConverter = () => {
+  // Estado para almacenar la temperatura ingresada y la escala seleccionada
+  const [temperature, setTemperature] = useState('');
+  const [scale, setScale] = useState('C');
+  const [converted, setConverted] = useState({
+    C: '',
+    F: '',
+    K: '',
+    R: '',
+    Re: '',
+  });
 
   const convertTemperature = () => {
-    // Convertimos la entrada a número flotante
     const temp = parseFloat(temperature);
-    if (isNaN(temp)) return; // Si no es un número, salimos de la función
+    if (isNaN(temp)) {
+      setConverted({ C: 'Inválido', F: 'Inválido', K: 'Inválido', R: 'Inválido', Re: 'Inválido' });
+      return;
+    }
 
-    let celsius, fahrenheit, kelvin, rankine, reaumur;
+    let celsius: number;
 
-    // Determinamos la conversión según la escala seleccionada
     switch (scale) {
-      case 'C': // Convertimos desde Celsius
+      case 'C':
         celsius = temp;
-        fahrenheit = (temp * 9/5) + 32;
-        kelvin = temp + 273.15;
-        rankine = (temp + 273.15) * 9/5;
-        reaumur = temp * 4/5;
         break;
-      case 'F': // Convertimos desde Fahrenheit
-        celsius = (temp - 32) * 5/9;
-        fahrenheit = temp;
-        kelvin = celsius + 273.15;
-        rankine = temp + 459.67;
-        reaumur = celsius * 4/5;
+      case 'F':
+        celsius = (temp - 32) * 5 / 9;
         break;
-      case 'K': // Convertimos desde Kelvin
+      case 'K':
         celsius = temp - 273.15;
-        fahrenheit = (celsius * 9/5) + 32;
-        kelvin = temp;
-        rankine = temp * 9/5;
-        reaumur = celsius * 4/5;
         break;
-      case 'R': // Convertimos desde Rankine
-        celsius = (temp - 491.67) * 5/9;
-        fahrenheit = temp - 459.67;
-        kelvin = temp * 5/9;
-        rankine = temp;
-        reaumur = celsius * 4/5;
+      case 'R':
+        celsius = (temp - 491.67) * 5 / 9;
         break;
-      case 'Re': // Convertimos desde Réaumur
-        celsius = temp * 5/4;
-        fahrenheit = (celsius * 9/5) + 32;
-        kelvin = celsius + 273.15;
-        rankine = (celsius + 273.15) * 9/5;
-        reaumur = temp;
+      case 'Re':
+        celsius = temp * 5 / 4;
         break;
       default:
+        setConverted({ C: 'Inválido', F: 'Inválido', K: 'Inválido', R: 'Inválido', Re: 'Inválido' });
         return;
     }
 
-    // Almacenamos los resultados con 2 decimales de precisión
     setConverted({
       C: celsius.toFixed(2),
-      F: fahrenheit.toFixed(2),
-      K: kelvin.toFixed(2),
-      R: rankine.toFixed(2),
-      Re: reaumur.toFixed(2),
+      F: (celsius * 9 / 5 + 32).toFixed(2),
+      K: (celsius + 273.15).toFixed(2),
+      R: ((celsius + 273.15) * 9 / 5).toFixed(2),
+      Re: (celsius * 4 / 5).toFixed(2),
     });
   };
 
-  // Retornamos el estado y la función de conversión
-  return { converted, convertTemperature };
+  return { temperature, setTemperature, scale, setScale, converted, convertTemperature };
 };
 
 export default useTemperatureConverter;
