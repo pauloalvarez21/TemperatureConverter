@@ -37,6 +37,12 @@ const HomeScreen = () => {
       >
         <Text style={styles.buttonText}>Go to Number Converter</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('LengthConverter')}
+      >
+        <Text style={styles.buttonText}>Go to Length Converter</Text>
+      </TouchableOpacity>
     </View>
   );
 };

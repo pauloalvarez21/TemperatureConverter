@@ -1,9 +1,11 @@
+import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import TemperatureConverter from '../screens/TemperatureConverter';
 import RomanConverter from '../screens/RomanConverter';
 import MayaConverter from '../screens/MayaConverter';
 import NumberConverter from '../screens/NumberConverter';
+import LengthConverter from '../screens/LengthConverter';
 
 // Define el tipo de las rutas
 export type RootStackParamList = {
@@ -12,6 +14,7 @@ export type RootStackParamList = {
   RomanConverter: undefined;
   MayaConverter: undefined;
   NumberConverter: undefined;
+  LengthConverter: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -29,6 +32,7 @@ export const StackNavigator = () => {
       <Stack.Screen name="RomanConverter" component={RomanConverter} />
       <Stack.Screen name="MayaConverter" component={MayaConverter} />
       <Stack.Screen name="NumberConverter" component={NumberConverter} />
+      <Stack.Screen name="LengthConverter" component={LengthConverter} />
     </Stack.Navigator>
   );
 };
