@@ -15,33 +15,33 @@ const HomeScreen = () => {
       <Text style={styles.title}>Easy Converter</Text>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('TemperatureConverter')}
-      >
+        onPress={() => navigation.navigate('TemperatureConverter')}>
         <Text style={styles.buttonText}>Go to Temperature Converter</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('RomanConverter')}
-      >
+        onPress={() => navigation.navigate('RomanConverter')}>
         <Text style={styles.buttonText}>Go to Roman Converter</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('MayaConverter')}
-      >
+        onPress={() => navigation.navigate('MayaConverter')}>
         <Text style={styles.buttonText}>Go to Maya Converter</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('NumberConverter')}
-      >
+        onPress={() => navigation.navigate('NumberConverter')}>
         <Text style={styles.buttonText}>Go to Number Converter</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('LengthConverter')}
-      >
+        onPress={() => navigation.navigate('LengthConverter')}>
         <Text style={styles.buttonText}>Go to Length Converter</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('PressureConverter')}>
+        <Text style={styles.buttonText}>Go to Pressure Converter</Text>
       </TouchableOpacity>
     </View>
   );
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     elevation: 5,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.2,
     shadowRadius: 3,
   },
@@ -82,4 +82,3 @@ const styles = StyleSheet.create({
 });
 
 export default HomeScreen;
-
