@@ -48,6 +48,11 @@ const HomeScreen = () => {
         onPress={() => navigation.navigate('QuadraticSolver')}>
         <Text style={styles.buttonText}>Go to Quadratic Solver</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('PowerConverter')}>
+        <Text style={styles.buttonText}>Go to Power Converter</Text>
+      </TouchableOpacity>
     </View>
   );
 };

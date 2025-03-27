@@ -8,6 +8,7 @@ import NumberConverter from '../screens/NumberConverter';
 import LengthConverter from '../screens/LengthConverter';
 import PressureConverter from '../screens/PressureConverter';
 import QuadraticSolver from '../screens/QuadraticSolver';
+import PowerConverter from '../screens/PowerConverter';
 
 // Define el tipo de las rutas
 export type RootStackParamList = {
@@ -19,6 +20,7 @@ export type RootStackParamList = {
   LengthConverter: undefined;
   PressureConverter: undefined;
   QuadraticSolver: undefined;
+  PowerConverter: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -39,6 +41,7 @@ export const StackNavigator = () => {
       <Stack.Screen name="LengthConverter" component={LengthConverter} />
       <Stack.Screen name="PressureConverter" component={PressureConverter} />
       <Stack.Screen name="QuadraticSolver" component={QuadraticSolver} />
+      <Stack.Screen name="PowerConverter" component={PowerConverter} />
     </Stack.Navigator>
   );
 };
