@@ -77,9 +77,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.temperatureconverter"
+    namespace "com.gaelectronica.multiapp"
     defaultConfig {
-        applicationId "com.temperatureconverter"
+        applicationId "com.gaelectronica.multiapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -1,4 +1,4 @@
-package com.temperatureconverter
+package com.gaelectronica.multiapp
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

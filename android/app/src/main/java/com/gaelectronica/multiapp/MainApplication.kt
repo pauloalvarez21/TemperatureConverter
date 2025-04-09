@@ -1,4 +1,4 @@
-package com.temperatureconverter
+package com.gaelectronica.multiapp
 
 import android.app.Application
 import com.facebook.react.PackageList
